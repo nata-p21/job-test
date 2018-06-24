@@ -2,8 +2,8 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * CalculationHistory
@@ -39,7 +39,7 @@ class CalculationHistory
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="startDate", type="date")
+     * @ORM\Column(name="startDate", type="datetime")
      */
     private $startDate;
 
@@ -53,24 +53,8 @@ class CalculationHistory
     /**
      * @var PaymentSchedule[]
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\PaymentSchedule", mappedBy="calculationHistory")
-     *
      */
     private $paymentSchedule;
-
-    /**
-     * @var \DateTime
-     * @ORM\Column(type="datetime")
-     */
-    private $calculationDate;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->paymentSchedule = new ArrayCollection();
-        $this->calculationDate = new \DateTime();
-    }
 
     /**
      * Get id
@@ -177,39 +161,5 @@ class CalculationHistory
     {
         return $this->interestRate;
     }
-
-
-    /**
-     * Add paymentSchedule
-     *
-     * @param PaymentSchedule $paymentSchedule
-     *
-     * @return CalculationHistory
-     */
-    public function addPaymentSchedule(PaymentSchedule $paymentSchedule)
-    {
-        $this->paymentSchedule[] = $paymentSchedule;
-
-        return $this;
-    }
-
-    /**
-     * Remove paymentSchedule
-     *
-     * @param PaymentSchedule $paymentSchedule
-     */
-    public function removePaymentSchedule(PaymentSchedule $paymentSchedule)
-    {
-        $this->paymentSchedule->removeElement($paymentSchedule);
-    }
-
-    /**
-     * Get paymentSchedule
-     *
-     * @return PaymentSchedule[]|ArrayCollection|null
-     */
-    public function getPaymentSchedule()
-    {
-        return $this->paymentSchedule;
-    }
 }
+

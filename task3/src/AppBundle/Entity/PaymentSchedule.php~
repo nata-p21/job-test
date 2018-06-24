@@ -65,8 +65,7 @@ class PaymentSchedule
 
     /**
      * @var CalculationHistory
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\CalculationHistory", inversedBy="paymentSchedule", cascade={"all"})
-     * @ORM\JoinColumn(onDelete="CASCADE")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\CalculationHistory", inversedBy="paymentSchedule")
      */
     private $calculationHistory;
 
@@ -223,40 +222,5 @@ class PaymentSchedule
     {
         return $this->balanceOfDebt;
     }
-
-    /**
-     * Set calculationHistory
-     *
-     * @param CalculationHistory $calculationHistory
-     *
-     * @return PaymentSchedule
-     */
-    public function setCalculationHistory(CalculationHistory $calculationHistory = null)
-    {
-        $this->calculationHistory = $calculationHistory;
-
-        return $this;
-    }
-
-    /**
-     * Get calculationHistory
-     *
-     * @return CalculationHistory
-     */
-    public function getCalculationHistory()
-    {
-        return $this->calculationHistory;
-    }
-
-    public function getArray()
-    {
-        return [
-            'paymentNumber' => $this->getPaymentNumber(),
-            'date' => $this->getDate()->format('d.m.Y'),
-            'monthlyCreditPayment' => $this->getMonthlyCreditPayment(),
-            'interestRatePayment' => $this->getInterestRatePayment(),
-            'monthlyPayment' => $this->getMonthlyPayment(),
-            'debt' => $this->getBalanceOfDebt()
-        ];
-    }
 }
+
