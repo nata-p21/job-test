@@ -63,149 +63,68 @@ class CalculationHistory
      */
     private $calculationDate;
 
-    /**
-     * Constructor
-     */
     public function __construct()
     {
         $this->paymentSchedule = new ArrayCollection();
         $this->calculationDate = new \DateTime();
     }
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Set sum
-     *
-     * @param float $sum
-     *
-     * @return CalculationHistory
-     */
-    public function setSum($sum)
+    public function setSum(float $sum): void
     {
         $this->sum = $sum;
-
-        return $this;
     }
 
-    /**
-     * Get sum
-     *
-     * @return float
-     */
-    public function getSum()
+    public function getSum(): float
     {
         return $this->sum;
     }
 
-    /**
-     * Set period
-     *
-     * @param integer $period
-     *
-     * @return CalculationHistory
-     */
-    public function setPeriod($period)
+    public function setPeriod(int $period): void
     {
         $this->period = $period;
-
-        return $this;
     }
 
-    /**
-     * Get period
-     *
-     * @return int
-     */
-    public function getPeriod()
+    public function getPeriod(): int
     {
         return $this->period;
     }
 
-    /**
-     * Set startDate
-     *
-     * @param \DateTime $startDate
-     *
-     * @return CalculationHistory
-     */
-    public function setStartDate($startDate)
+    public function setStartDate(\DateTime $startDate): void
     {
         $this->startDate = new \DateTime($startDate);
-
-        return $this;
     }
 
-    /**
-     * Get startDate
-     *
-     * @return \DateTime
-     */
-    public function getStartDate()
+    public function getStartDate(): \DateTime
     {
         return $this->startDate;
     }
 
-    /**
-     * Set interestRate
-     *
-     * @param float $interestRate
-     *
-     * @return CalculationHistory
-     */
-    public function setInterestRate($interestRate)
+    public function setInterestRate(float $interestRate): void
     {
         $this->interestRate = $interestRate;
-
-        return $this;
     }
 
-    /**
-     * Get interestRate
-     *
-     * @return float
-     */
-    public function getInterestRate()
+    public function getInterestRate(): float
     {
         return $this->interestRate;
     }
 
-
-    /**
-     * Add paymentSchedule
-     *
-     * @param PaymentSchedule $paymentSchedule
-     *
-     * @return CalculationHistory
-     */
-    public function addPaymentSchedule(PaymentSchedule $paymentSchedule)
+    public function addPaymentSchedule(PaymentSchedule $paymentSchedule): void
     {
         $this->paymentSchedule[] = $paymentSchedule;
-
-        return $this;
     }
 
-    /**
-     * Remove paymentSchedule
-     *
-     * @param PaymentSchedule $paymentSchedule
-     */
-    public function removePaymentSchedule(PaymentSchedule $paymentSchedule)
+    public function removePaymentSchedule(PaymentSchedule $paymentSchedule): void
     {
         $this->paymentSchedule->removeElement($paymentSchedule);
     }
 
     /**
-     * Get paymentSchedule
-     *
      * @return PaymentSchedule[]|ArrayCollection|null
      */
     public function getPaymentSchedule()

@@ -70,185 +70,82 @@ class PaymentSchedule
      */
     private $calculationHistory;
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Set paymentNumber
-     *
-     * @param integer $paymentNumber
-     *
-     * @return paymentSchedule
-     */
-    public function setPaymentNumber($paymentNumber)
+    public function setPaymentNumber(int $paymentNumber): void
     {
         $this->paymentNumber = $paymentNumber;
-
-        return $this;
     }
 
-    /**
-     * Get paymentNumber
-     *
-     * @return int
-     */
-    public function getPaymentNumber()
+    public function getPaymentNumber(): int
     {
         return $this->paymentNumber;
     }
 
-    /**
-     * Set date
-     *
-     * @param \DateTime $date
-     *
-     * @return paymentSchedule
-     */
-    public function setDate($date)
+    public function setDate($date): void
     {
         $this->date = $date;
-
-        return $this;
     }
 
-    /**
-     * Get date
-     *
-     * @return \DateTime
-     */
-    public function getDate()
+    public function getDate(): \DateTime
     {
         return $this->date;
     }
 
-    /**
-     * Set monthlyCreditPayment
-     *
-     * @param float $monthlyCreditPayment
-     *
-     * @return paymentSchedule
-     */
-    public function setMonthlyCreditPayment($monthlyCreditPayment)
+    public function setMonthlyCreditPayment(float $monthlyCreditPayment): void
     {
         $this->monthlyCreditPayment = $monthlyCreditPayment;
-
-        return $this;
     }
 
-    /**
-     * Get monthlyCreditPayment
-     *
-     * @return float
-     */
-    public function getMonthlyCreditPayment()
+    public function getMonthlyCreditPayment(): float
     {
         return $this->monthlyCreditPayment;
     }
 
-    /**
-     * Set interestRatePayment
-     *
-     * @param float $interestRatePayment
-     *
-     * @return paymentSchedule
-     */
-    public function setInterestRatePayment($interestRatePayment)
+    public function setInterestRatePayment(float $interestRatePayment): void
     {
         $this->interestRatePayment = $interestRatePayment;
-
-        return $this;
     }
 
-    /**
-     * Get interestRatePayment
-     *
-     * @return float
-     */
-    public function getInterestRatePayment()
+    public function getInterestRatePayment(): float
     {
         return $this->interestRatePayment;
     }
 
-    /**
-     * Set monthlyPayment
-     *
-     * @param float $monthlyPayment
-     *
-     * @return paymentSchedule
-     */
-    public function setMonthlyPayment($monthlyPayment)
+    public function setMonthlyPayment(float $monthlyPayment): void
     {
         $this->monthlyPayment = $monthlyPayment;
-
-        return $this;
     }
 
-    /**
-     * Get monthlyPayment
-     *
-     * @return float
-     */
-    public function getMonthlyPayment()
+    public function getMonthlyPayment(): float
     {
         return $this->monthlyPayment;
     }
 
-    /**
-     * Set balanceOfDebt
-     *
-     * @param float $balanceOfDebt
-     *
-     * @return paymentSchedule
-     */
-    public function setBalanceOfDebt($balanceOfDebt)
+    public function setBalanceOfDebt(float $balanceOfDebt)
     {
         $this->balanceOfDebt = $balanceOfDebt;
-
-        return $this;
     }
 
-    /**
-     * Get balanceOfDebt
-     *
-     * @return float
-     */
-    public function getBalanceOfDebt()
+    public function getBalanceOfDebt(): float
     {
         return $this->balanceOfDebt;
     }
 
-    /**
-     * Set calculationHistory
-     *
-     * @param CalculationHistory $calculationHistory
-     *
-     * @return PaymentSchedule
-     */
-    public function setCalculationHistory(CalculationHistory $calculationHistory = null)
+    public function setCalculationHistory(CalculationHistory $calculationHistory = null): void
     {
         $this->calculationHistory = $calculationHistory;
-
-        return $this;
     }
 
-    /**
-     * Get calculationHistory
-     *
-     * @return CalculationHistory
-     */
-    public function getCalculationHistory()
+    public function getCalculationHistory(): CalculationHistory
     {
         return $this->calculationHistory;
     }
 
-    public function getArray()
+    public function getArray(): array
     {
         return [
             'paymentNumber' => $this->getPaymentNumber(),
